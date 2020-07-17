@@ -25,7 +25,7 @@
             android:text="뉴스제목"/>
 
         <ImageButton
-            android:id="@+id/btnAddMenuEdit"
+            android:id="@+id/btnEditNews"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -35,7 +35,7 @@
             android:layout_gravity="center_vertical"
             android:background="#fff"/>
         <ImageButton
-            android:id="@+id/btnAddMenuDelete"
+            android:id="@+id/btnDeleteNews"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"

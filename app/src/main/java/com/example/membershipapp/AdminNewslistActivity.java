@@ -1,5 +1,6 @@
 package com.example.membershipapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +12,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class AdminNewslistActivity extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+public class AdminNewslistActivity extends LogActivity {
 
     RecyclerView recyclerNewslist;
     Button btnAddNews;
@@ -33,21 +38,21 @@ public class AdminNewslistActivity extends AppCompatActivity {
 
         //리사이클러뷰 초기화한다
         recyclerInit();
-//        //파이어베이스에 있는 데이터를 불러온다
-//        loadData();
+        //파이어베이스에 있는 데이터를 불러온다
+        loadData();
         //아이템 클릭 이벤트 메소드
         clickItemView();
-//
-//        btnAddNews.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent menuAddIntent = new Intent(AdminNewslistActivity.this, AdminMenuAddActivity.class);
-//                int listIndex = adminMenulistAdapter.menuList.size();
-//                Log.d(TAG, "btnAddMenu() 클릭 -> menuList.size()  : "+listIndex);
-//                menuAddIntent.putExtra("listIndex", listIndex);
-//                startActivityForResult(menuAddIntent, 2001);
-//            }
-//        });
+
+        btnAddNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newsAddIntent = new Intent(AdminNewslistActivity.this, AdminNewsAddActivity.class);
+                int listIndex = adminNewslistAdapter.newsList.size();
+                Log.d(TAG, "btnAddMenu() 클릭 -> menuList.size()  : "+listIndex);
+                newsAddIntent.putExtra("listIndex", listIndex);
+                startActivityForResult(newsAddIntent, 5001);
+            }
+        });
     }
 
     //리사이클러뷰 데이터 초기화
@@ -73,5 +78,33 @@ public class AdminNewslistActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    //firebase realtime 데이터 가져와서 recyclerview에 적용
+    public void loadData(){
+        //firebase test중 (옵저버패턴 -> 글자 수정시 -> 보고있는 앱 화면에서 자동 새로고침 됨)
+        applicationClass.firebaseDatabase.getReference().child("AdminNewslist")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        //초기화
+                        adminNewslistAdapter.newsList.clear();
+                        adminNewslistAdapter.uidLists.clear();
+
+                        for(DataSnapshot snapshot : dataSnapshot.getChildren()){    //getChildren = 한 유저에 대한 정보 (한줄) 이라고 생각하면 됨
+                            AdminNewslistDTO newslistDTO = snapshot.getValue(AdminNewslistDTO.class);
+                            String uidKey = snapshot.getKey();
+                            Log.d(TAG, "key :"+ uidKey);    //key :-M8T777K-KXhth72lNRF
+                            adminNewslistAdapter.newsList.add(newslistDTO);
+                            adminNewslistAdapter.uidLists.add(uidKey);
+                        }
+                        adminNewslistAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 }

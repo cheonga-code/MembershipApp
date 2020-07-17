@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
     ArrayList<AdminNewslistDTO> newsList = new ArrayList<AdminNewslistDTO>();
     ArrayList<String> uidLists = new ArrayList<>();
 
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
     public AdminNewslistAdapter(Context context) {
         this.context = context;
@@ -61,8 +63,42 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
         holder.setOnItemClickListener(clickListener);
 
         //setText()
-        holder.newsNumber.setText(item.getNewsNumber());
+//        newsList.size();
+
+        holder.newsNumber.setText(Integer.toString(itemPosition+1));
         holder.newsTitle.setText(item.getNewsTitle());
+
+        //삭제버튼 클릭시
+        holder.btnDeleteNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //알럿 빌더 생성
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                //빌더에 정보입력
+                builder.setTitle("삭제학인")
+                        .setMessage("삭제하시겠습니까?")
+                        .setCancelable(false)
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                //firebase 삭제 진행
+//                                databaseDelete(item.getMenuName(), itemPosition);
+                                databaseDelete(position);
+                            }
+                        })
+                        .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                //알럿 생성
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
     }
 
     @Override
@@ -86,6 +122,7 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
     public class AdminNewslistViewHolder extends RecyclerView.ViewHolder {
 
         TextView newsNumber, newsTitle;
+        ImageButton btnEditNews, btnDeleteNews;
 
         OnItemClickListener clickListener;
 
@@ -94,6 +131,8 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
 
             newsNumber = (TextView) itemView.findViewById(R.id.newsNumber);
             newsTitle = (TextView) itemView.findViewById(R.id.newsTitle);
+            btnEditNews = (ImageButton) itemView.findViewById(R.id.btnEditNews);
+            btnDeleteNews = (ImageButton) itemView.findViewById(R.id.btnDeleteNews);
 
             //각각 아이템 뷰에 올릴 리스너 이벤트 설정 -> 각각의 아이템 뷰가 클릭됬을 때
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +148,29 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
                 }
             });
 
+            //수정 버튼 클릭시
+            btnEditNews.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition(); //클릭한 아이템의 위치를 알수있다
+                    Log.d("LogActivity", "수정버튼 클릭 위치 : "+ position);
+
+                    //newslist 의 uidkey 값 intent에 넣어서 전달
+                    String newslistUidKey = uidLists.get(position);
+                    Log.d(TAG, "수정버튼 클릭 uidKey :"+ newslistUidKey);
+
+                    Context context = v.getContext();
+
+                    Intent intent = new Intent(v.getContext(), AdminNewsEditActivity.class);
+                    intent.putExtra("newslistUidKey", newslistUidKey);
+                    intent.putExtra("editNewsTitle", newsList.get(position).getNewsTitle());
+                    intent.putExtra("editNewsContent", newsList.get(position).getNewsContent());
+
+                    context.startActivity(intent);
+                    Log.d("LogActivity", "adapter -> edit화면으로 보냄");
+                }
+            });
+
 
         }
 
@@ -116,6 +178,24 @@ public class AdminNewslistAdapter extends RecyclerView.Adapter<AdminNewslistAdap
         public void setOnItemClickListener(OnItemClickListener clickListener){
             this.clickListener = clickListener;
         }
+    }
+
+    //database realtime 에서 삭제
+    public void databaseDelete(int position){
+
+        firebaseDatabase.getReference().child("AdminNewslist").child(uidLists.get(position)).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(context , "db 삭제 완료", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "db 삭제 완료");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context , "db 삭제 실패", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "db 삭제 실패");
+            }
+        });
     }
 
 }

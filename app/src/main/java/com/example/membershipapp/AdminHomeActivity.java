@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class AdminHomeActivity extends LogActivity implements View.OnClickListener {
 
-    Button btnAdminMenuOrderlist, btnAdminMenuSetting, btnAdminLogout;
+    Button btnAdminMenuOrderlist, btnAdminMenuSetting, btnAdminMenuNews, btnAdminLogout;
     FloatingActionButton btnAdminQRcode;
 
     @Override
@@ -38,11 +38,13 @@ public class AdminHomeActivity extends LogActivity implements View.OnClickListen
 
         btnAdminMenuOrderlist = (Button)findViewById(R.id.btnAdminMenuOrderlist);
         btnAdminMenuSetting = (Button)findViewById(R.id.btnAdminMenuSetting);
+        btnAdminMenuNews = (Button)findViewById(R.id.btnAdminMenuNews);
         btnAdminLogout = (Button)findViewById(R.id.btnAdminLogout);
         btnAdminQRcode = (FloatingActionButton)findViewById(R.id.btnAdminQRcode);
 
         btnAdminMenuOrderlist.setOnClickListener(this);
         btnAdminMenuSetting.setOnClickListener(this);
+        btnAdminMenuNews.setOnClickListener(this);
         btnAdminLogout.setOnClickListener(this);
         btnAdminQRcode.setOnClickListener(this);
 
@@ -62,6 +64,11 @@ public class AdminHomeActivity extends LogActivity implements View.OnClickListen
             case R.id.btnAdminMenuSetting:
                 Intent menuSettingIntent = new Intent(this, AdminMenulistActivity.class);
                 startActivityForResult(menuSettingIntent, 11);
+                break;
+
+            case R.id.btnAdminMenuNews:
+                Intent newsListIntent = new Intent(this, AdminNewslistActivity.class);
+                startActivityForResult(newsListIntent, 13);
                 break;
 
             //QR코드

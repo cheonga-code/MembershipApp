@@ -2,18 +2,11 @@ package com.example.membershipapp;
 
 public class AdminNewslistDTO {
 
-    int newsNumber;
+//    int newsNumber;
     String newsTitle;
+    String newsContent;
 
     public AdminNewslistDTO() {
-    }
-
-    public int getNewsNumber() {
-        return newsNumber;
-    }
-
-    public void setNewsNumber(int newsNumber) {
-        this.newsNumber = newsNumber;
     }
 
     public String getNewsTitle() {
@@ -22,5 +15,13 @@ public class AdminNewslistDTO {
 
     public void setNewsTitle(String newsTitle) {
         this.newsTitle = newsTitle;
+    }
+
+    public String getNewsContent() {
+        return newsContent;
+    }
+
+    public void setNewsContent(String newsContent) {
+        this.newsContent = newsContent;
     }
 }

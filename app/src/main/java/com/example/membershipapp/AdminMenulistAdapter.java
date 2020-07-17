@@ -244,7 +244,7 @@ public class AdminMenulistAdapter extends RecyclerView.Adapter<AdminMenulistAdap
     //database realtime 에서 삭제
     public void databaseDelete(int position){
 
-        firebaseDatabase.getReference().child("menulist").child(uidLists.get(position)).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+        firebaseDatabase.getReference().child("AdminMenulist").child(uidLists.get(position)).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(context , "db 삭제 완료", Toast.LENGTH_SHORT).show();
