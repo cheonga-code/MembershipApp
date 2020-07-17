@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartlistActivity"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCartList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/colorGray"
+        android:scrollbars="vertical"/>
+
+    <TextView
+        android:id="@+id/tvCartlistNull"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:text="장바구니에 리스트가 없습니다."
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:gravity="center_vertical"/>
+
+    <LinearLayout
+        android:id="@+id/linearBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerCoffeeList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:background="@drawable/border_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:layout_marginRight="16dp">
+            <Button
+                android:id="@+id/btnCouponUse"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:text="쿠폰사용"
+                android:background="@color/colorYellow"
+                android:textColor="#000"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"/>
+            <TextView
+                android:id="@+id/tvCouponUse"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="없음"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총 결제금액"
+            android:textColor="#ff0000"
+            android:textSize="18sp"
+            android:layout_marginRight="16dp"/>
+        <TextView
+            android:id="@+id/tvMenuTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#ff0000"
+            android:textSize="18sp"
+            android:layout_marginRight="16dp"/>
+
+        <Button
+            android:id="@+id/btnOrderOK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주문하기"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

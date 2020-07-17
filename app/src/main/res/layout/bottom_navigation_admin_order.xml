@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNavigationAdminOrder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:itemBackground="@color/colorMain3"
+    android:background="@color/colorMain3"
+    app:itemIconTint="@drawable/bottom_navigation_item_colors"
+    app:menu="@menu/bottom_navitation_menu_admin_order"
+    app:itemTextAppearanceActive="@style/BottomNavigationViewAdminOrder.Active"
+    app:itemTextAppearanceInactive="@style/BottomNavigationAdminOrderView"
+    app:labelVisibilityMode="labeled"
+    android:layout_gravity="top">
+
+</com.google.android.material.bottomnavigation.BottomNavigationView>

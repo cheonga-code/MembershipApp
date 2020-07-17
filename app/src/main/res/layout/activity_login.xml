@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/colorSub3">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="180dp"
+        android:src="@drawable/logo_jamjamorder2"/>
+
+    <EditText
+        android:id="@+id/loginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email을 입력하세요"
+        android:textSize="16sp"
+        android:padding="15dp"
+        android:background="@drawable/round_border"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/loginPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password를 입력하세요"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        android:padding="15dp"
+        android:background="@drawable/round_border"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:gravity="right">
+
+        <CheckBox
+            android:id="@+id/checkboxAutoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동로그인"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLoginOK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="16sp"
+        android:background="@drawable/round_login_btn"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="16sp"
+        android:background="@drawable/round_join_btn"/>
+
+</LinearLayout>

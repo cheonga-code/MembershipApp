@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#42352f</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGreen">#12a35f</color>
+    <color name="colorBlue">#173bcf</color>
+    <color name="colorDarkBlue">#002759</color>
+    <color name="colorGray">#f4f4f4</color>
+    <color name="colorLightGray">#f1f1f1</color>
+    <color name="colorYellow">#ffcd38</color>
+    <color name="colorRed">#c70c18</color>
+
+    <color name="colorDarkBlack">#262626</color>
+    <color name="colorMain">#f7d148</color>
+    <color name="colorMain2">#fce300</color>
+    <color name="colorMain3">#ee7764</color>
+    <color name="colorMainOrange">#f67828</color>
+    <color name="colorSub">#00cfa9</color>
+    <color name="colorSub2">#a299ca</color>
+    <color name="colorSub3">#ffb69b</color>
+    <color name="colorSubOrange">#ffb347</color>
+    <color name="colorbackOrange1">#f3cd86</color>
+    <color name="colorbackOrange2">#eeab73</color>
+    <color name="colorBackground">#faf7f7</color>
+    <color name="colorDarkSub">#3370d4</color>
+    <color name="colorNav">#42352f</color>
+    <color name="colorTopBar">#42352f</color>
+    <color name="colorLightBrown">#6e605a</color>
+    <color name="colorKakaoPoint">#a80000</color>
+    <color name="color999">#999</color>
+    <!--반투명-->
+    <color name="colorTrans">#1A000000</color>
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.membershipapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".CouponUseActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".AdminNewslistAddActivity" />
+        <activity android:name=".AdminNewslistActivity" />
+        <activity android:name=".AdminQrScannerActivity" />
+        <activity
+            android:name=".MypageEditActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".SeatActivity" />
+        <activity android:name=".BootpayActivity" />
+        <activity android:name=".ReviewlistActivity" />
+        <activity android:name=".AdminOrderlistCancelActivity" />
+        <activity android:name=".AdminOrderlistDetailActivity" />
+        <activity android:name=".AdminOrderlistStatisticActivity" />
+        <activity android:name=".AdminOrderlistCompleteActivity" />
+        <activity android:name=".AdminOrderlistProcessActivity" />
+        <activity android:name=".AdminOrderlistWaitActivity">
+            <intent-filter>
+                <action android:name="OPEN_ADMIN_ORDER_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderlistDetailActivity" />
+        <activity
+            android:name=".CartlistItemEditActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity
+            android:name=".PaymentMethodActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".CartlistActivity" />
+        <activity android:name=".CoffeeDetailActivity" />
+        <activity android:name=".AdminHomeActivity" />
+        <activity
+            android:name=".AdminMenuEditActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity
+            android:name=".AdminMenuAddActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".AdminMenulistActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".PaymentPasswordActivity" /> <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_channel_id" -->
+        <!-- android:value="@string/default_notification_channel_id" /> -->
+        <!-- FCM : 백그라운드에서 앱의 알림 수신 외에 다른방식으로 메세지를 처리하는 경우에 필요 -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
+            </intent-filter>
+        </service> <!-- FCM : 기본 알림 아이콘 및 색상 설정하는 메타데이터 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo_jamjamorder" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity
+            android:name=".CardChargeActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".EventNewsActivity" />
+        <activity android:name=".OrderlistActivity">
+            <intent-filter>
+                <action android:name="OPEN_USER_ORDER_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".JoinActivity" />
+        <activity
+            android:name=".CoffeeEditActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".MypageActivity" />
+        <activity android:name=".CouponActivity" />
+        <activity android:name=".CoffeelistActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CouponBarcodeActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.membershipapp"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+    </application>
+
+</manifest>

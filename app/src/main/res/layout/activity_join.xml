@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JoinActivity"
+    android:orientation="vertical"
+    android:background="#e3dbeb"
+    android:padding="25dp"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorSub2"/>
+
+    <EditText
+        android:id="@+id/joinName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름을 입력하세요"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:padding="15dp"
+        android:background="@drawable/round_border_join"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/joinID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디를 입력하세요"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:padding="15dp"
+        android:background="@drawable/round_border_join"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/joinEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email을 입력하세요"
+        android:textSize="16sp"
+        android:padding="15dp"
+        android:background="@drawable/round_border_join"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/joinPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password를 입력하세요"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        android:padding="15dp"
+        android:background="@drawable/round_border_join"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btnJoinOK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="16sp"
+        android:background="@drawable/round_join_btn"/>
+
+</LinearLayout>

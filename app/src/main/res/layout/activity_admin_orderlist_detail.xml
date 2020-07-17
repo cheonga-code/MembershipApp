@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문 시간"
+        android:textSize="21sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvAdminOrderDetailDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2020년 02월 03일"
+        android:layout_marginBottom="15dp"
+        android:textSize="16sp"
+        android:textColor="#333"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문자"
+        android:textSize="21sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvAdminOrderDetailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="aaa"
+        android:layout_marginBottom="15dp"
+        android:textSize="16sp"
+        android:textColor="#333"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="총 결제가격"
+        android:textSize="21sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvAdminOrderDetailTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="21,000원"
+        android:layout_marginBottom="15dp"
+        android:textSize="16sp"
+        android:textColor="#333"/>
+
+    <LinearLayout
+        android:id="@+id/btnBoxAdminOrderWait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/btnAdminOrderYes"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="주문승인"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/colorBlue"
+            android:textColor="#fff"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:id="@+id/btnAdminOrderNo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="주문거부"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/colorRed"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnBoxAdminOrderProcess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/btnAdminOrderComplete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="제조완료 (알람 보내기)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/colorSub"
+            android:textColor="#fff"
+            android:layout_marginRight="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnBoxAdminOrderCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/btnAdminOrderCancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="결제취소 (다른수단으로 다시 결제)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="#666"
+            android:textColor="#fff"
+            android:layout_marginRight="5dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문 리스트"
+        android:textSize="21sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAdminOrderlistDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_weight="1"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/colorGray"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="10dp"/>
+
+
+</LinearLayout>

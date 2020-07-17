@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="500dp"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imgEditMenu"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="#fff"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/icon_image"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴종류"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupAddMenuEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioBtnBeverageEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="음료"
+            android:checked="true"
+            android:layout_marginRight="15dp"/>
+        <RadioButton
+            android:id="@+id/radioBtnDessertEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="디저트"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴이름"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/etEditMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴가격"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/etEditMenuPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnEditMenuOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수정"/>
+
+</LinearLayout>

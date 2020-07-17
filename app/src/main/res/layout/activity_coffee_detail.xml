@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoffeeDetailActivity">
+
+    <ImageView
+        android:id="@+id/menuDetailImg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#666"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/menuDetailName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품명"
+        android:textSize="21sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/menuDetailImg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/menuDetailPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품가격"
+        android:textSize="19sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/menuDetailName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/quantityBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/menuDetailPrice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:weightSum="3"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/btnDetailDecrement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="-"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/menuDetailQuantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="0"
+            android:textSize="20sp"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/btnDetailIncrement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="+"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCartGO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="장바구니 담기"
+        app:layout_constraintTop_toBottomOf="@id/quantityBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="30dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFloatingCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_shopping_cart_white_24dp"/>
+
+    <TextView
+        android:id="@+id/tvCartCounter"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:background="@drawable/round_floating_count"
+        app:layout_constraintTop_toTopOf="@id/btnFloatingCart"
+        app:layout_constraintRight_toRightOf="@id/btnFloatingCart"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

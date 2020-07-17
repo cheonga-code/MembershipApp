@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CouponActivity">
+
+    <Button
+        android:id="@+id/btnAvailableCoupon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="사용 가능한 쿠폰"
+        android:background="@color/colorMainOrange"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnCouponHistory"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+    <Button
+        android:id="@+id/btnCouponHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="쿠폰 히스토리"
+        android:background="@color/colorbackOrange1"
+        android:textSize="16sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btnAvailableCoupon"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/btnAvailableCoupon"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp">
+        <include
+            android:id="@+id/CntAvailableCoupon"
+            layout="@layout/recycler_available_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:id="@+id/CntCouponHistory"
+            layout="@layout/recycler_coupon_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/tvAvailableCouponNull"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="사용 가능한 쿠폰이 없습니다."
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:gravity="center_vertical"/>
+    </FrameLayout>
+
+    <include
+        layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

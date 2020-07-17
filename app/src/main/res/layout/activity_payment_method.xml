@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    tools:context=".PaymentMethodActivity"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnPaymentMethodMembershipCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="멤버십 카드 결제"
+        android:background="@color/colorWhite"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnPaymentMethodBootpayPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="휴대폰 결제 (API)"
+        android:background="@color/colorWhite"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnPaymentMethodBootpayCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="신용카드 결제 (API)"
+        android:background="@color/colorWhite"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/btnPaymentMethodCoupon"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="쿠폰 결제"-->
+<!--        android:background="@color/colorWhite"-->
+<!--        android:textColor="#000"-->
+<!--        android:textSize="18sp"-->
+<!--        android:layout_margin="10dp"/>-->
+
+</LinearLayout>

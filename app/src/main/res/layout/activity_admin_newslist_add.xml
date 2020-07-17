@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminNewslistAddActivity"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="뉴스제목"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/etAddNewsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="뉴스제목을 적어주세요"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="뉴스내용"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/etAddNewsContent"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:hint="뉴스내용을 적어주세요"
+        android:inputType="text"
+        android:background="@drawable/square_border"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnNewsSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장"/>
+
+</LinearLayout>
