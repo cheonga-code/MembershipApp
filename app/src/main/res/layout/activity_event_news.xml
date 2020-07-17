@@ -10,31 +10,30 @@
     <TextView
         android:id="@+id/newsTitle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintVertical_weight="0.05"
         android:text="JamJamCafe 의 새로운 소식"
         android:textSize="18sp"
         android:textColor="#000"
         android:textStyle="bold"
+        android:layout_marginBottom="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/img_newstest"/>
+        app:layout_constraintBottom_toTopOf="@id/recyclerEventNewslist"/>
 
-    <ScrollView
-        android:id="@+id/img_newstest"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEventNewslist"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintVertical_weight="0.95"
-        app:layout_constraintTop_toBottomOf="@id/newsTitle"
+        app:layout_constraintVertical_weight="9"
+        app:layout_constraintTop_toBottomOf="@+id/newsTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_newtest"
-            android:scaleType="fitStart"/>
-    </ScrollView>
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/colorGray"
+        android:scrollbars="vertical"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
