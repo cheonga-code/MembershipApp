@@ -16,8 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminNewsEditActivity" android:theme="@style/MyTheme.noTitle.Dialog" ></activity>
-        <activity android:name=".AdminNewsAddActivity" android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity android:name=".EventNewsDetailActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity
+            android:name=".AdminNewsEditActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
+        <activity
+            android:name=".AdminNewsAddActivity"
+            android:theme="@style/MyTheme.noTitle.Dialog" />
         <activity
             android:name=".CouponUseActivity"
             android:theme="@style/MyTheme.noTitle.Dialog" />

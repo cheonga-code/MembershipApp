@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,9 @@ public class EventNewsActivity extends LogActivity {
 
         //파이어베이스에 있는 데이터를 불러온다
         loadData();
+
+        //아이템 클릭 이벤트 메소드
+        clickItemView();
     }
 
     //리사이클러뷰 데이터 초기화
@@ -76,5 +80,22 @@ public class EventNewsActivity extends LogActivity {
 
                     }
                 });
+    }
+
+    //adapter item 클릭 이벤트
+    public void clickItemView(){
+        //아이템 클릭 이벤트
+        eventNewsAdapter.setOnItemClickListener(new EventNewsAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(RecyclerView.ViewHolder holder, View view, int position) {
+
+                //메뉴명과 메뉴가격 인텐트에 데이터 담아서 보내기
+                Intent detailIntent = new Intent(EventNewsActivity.this, EventNewsDetailActivity.class);
+                detailIntent.putExtra("newsTitle",eventNewsAdapter.newslistDTOArrayList.get(position).getNewsTitle());
+                detailIntent.putExtra("newsContent",eventNewsAdapter.newslistDTOArrayList.get(position).getNewsContent());
+                startActivity(detailIntent);
+            }
+        });
+
     }
 }
